@@ -1,0 +1,193 @@
+/* =========================================
+   1. RESET Y CONFIGURACIÓN BÁSICA
+   ========================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #343a40; /* $dark-color */
+  line-height: 1.6;
+  overflow-x: hidden; /* Evita scroll horizontal indeseado */
+}
+
+a {
+  text-decoration: none;
+}
+
+/* =========================================
+   2. TYPOGRAPHY (Tipografía Global)
+   ========================================= */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #007bff; /* $primary-color */
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* =========================================
+   3. COMPONENTS (Componentes Reutilizables)
+   ========================================= */
+
+/* --- Botones --- */
+.btn {
+  border-radius: 50px; /* Bordes redondeados modernos */
+  padding: 0.5rem 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Cards (Tarjetas de Funcionalidades) --- */
+.feature-card {
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  border-radius: 15px !important;
+  border: none;
+  background-color: #ffffff;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
+}
+
+.feature-card__icon {
+  height: 80px;
+  width: 80px;
+  background-color: rgba(0, 123, 255, 0.1); /* Fondo azul suave */
+  border-radius: 50%;
+  margin: 0 auto 1.5rem auto;
+
+  /* Flexbox centrado (Mixin aplicado) */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* =========================================
+   4. LAYOUT SECTIONS (Estructura de Página)
+   ========================================= */
+
+/* --- Header / Navbar --- */
+.header {
+  margin-bottom: 70px; /* Espacio para que el navbar fijo no tape contenido */
+}
+
+.header__logo {
+  font-weight: 800;
+  font-size: 1.5rem;
+  letter-spacing: -1px;
+}
+
+.header__nav-list .nav-link {
+  font-weight: 500;
+  color: #343a40 !important;
+}
+
+.header__nav-list .nav-link:hover {
+  color: #007bff !important;
+}
+
+/* Ajustes específicos para botones dentro del navbar */
+.header__nav-list .btn {
+  color: #ffffff !important;
+}
+.header__nav-list .btn-outline-primary {
+  color: #007bff !important;
+}
+.header__nav-list .btn-outline-primary:hover {
+  color: #ffffff !important;
+}
+
+/* --- Hero Section (Sección Principal) --- */
+.hero {
+  min-height: 90vh; /* Altura casi completa de pantalla */
+  background-color: #ffffff;
+  padding: 4rem 0;
+  position: relative;
+}
+
+.hero__content {
+  padding-right: 2rem;
+}
+
+.hero__title {
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: #343a40;
+}
+
+/* Media Query para Móviles (Mixin aplicado) */
+@media (max-width: 576px) {
+  .hero__title {
+    font-size: 2.5rem;
+  }
+  .hero__content {
+    padding-right: 0;
+    text-align: center;
+  }
+  .hero__actions {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.hero__subtitle {
+  font-size: 1.25rem;
+  color: #6c757d; /* $secondary-color */
+  margin-bottom: 2rem;
+}
+
+.hero__img {
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+  width: 100%;
+  height: auto;
+}
+
+.hero__img:hover {
+  transform: translateY(-5px);
+}
+
+/* --- Features Section --- */
+.features {
+  padding: 5rem 0;
+  background-color: #f8f9fa; /* $light-bg */
+}
+
+/* --- Footer --- */
+.footer {
+  background-color: #343a40;
+  color: #ffffff;
+  padding: 2rem 0;
+}
+
+.footer__socials a {
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.footer__socials a:hover {
+  color: #007bff !important;
+}

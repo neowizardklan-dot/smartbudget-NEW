@@ -1,0 +1,25 @@
+.hero {
+  min-height: 90vh; // Ocupa casi toda la pantalla
+  background-color: $white;
+  padding: $spacing-unit * 4 0; // Padding superior e inferior
+
+  &__title {
+    font-weight: 800;
+    margin-bottom: $spacing-unit;
+
+    // Ajuste para móvil usando mixin
+    @include respond-to(mobile) {
+      font-size: 2.5rem;
+    }
+  }
+
+  &__img {
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-10px);
+    }
+  }
+}

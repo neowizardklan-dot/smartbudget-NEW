@@ -1,0 +1,17 @@
+// 1. Abstracts
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+// 2. Base
+@import 'base/reset';
+@import 'base/typography';
+
+// 3. Components
+@import 'components/buttons';
+@import 'components/cards';
+
+// 4. Layout
+@import 'layout/header';
+@import 'layout/hero';
+@import 'layout/features';
+// @import 'layout/footer'; (opcional si es simple)

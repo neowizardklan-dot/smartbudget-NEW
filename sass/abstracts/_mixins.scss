@@ -1,0 +1,19 @@
+// Mixin para Flexbox centrado
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Mixin para Media Queries (Responsividad)
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == mobile {
+    @media (max-width: 576px) {
+      @content;
+    }
+  } @else if $breakpoint == tablet {
+    @media (max-width: 768px) {
+      @content;
+    }
+  }
+}

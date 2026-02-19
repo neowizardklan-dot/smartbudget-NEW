@@ -1,0 +1,245 @@
+<!doctype html>
+<!-- 1. Define que es un documento HTML5 moderno para el proyectoModulo 3 -->
+<html lang="es">
+  <!-- 2. Establece el idioma español para accesibilidad y SEO -->
+  <head>
+    <meta charset="UTF-8" />
+    <!-- 3. Permite caracteres especiales como ñ y tildes -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- 4. CRUCIAL: Hace que el sitio sea responsive en móviles -->
+    <title>SmartBudget - Presupuestos inteligentes</title>
+
+    <!-- 5. Carga de Bootstrap 4 (CSS) desde internet (CDN) -->
+    <!-- Provee la rejilla (grid), botones, navbar y utilidades de diseño -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    />
+
+    <!-- 6. Carga de FontAwesome (Iconos) -->
+    <!-- Nos permite usar iconos como la billetera o gráficos -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+
+    <!-- 7. Tu hoja de estilos personalizada (compilada de SASS) -->
+    <!-- Aquí es donde se aplican tus reglas BEM y estilos propios -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- =========================================
+         HEADER / NAVBAR
+         Etiqueta semántica <header> para la cabecera
+         ========================================= -->
+    <header class="header">
+      <!-- 
+          Clases de Bootstrap usadas aquí:
+          - navbar: Componente base de navegación.
+          - navbar-expand-lg: El menú se expande (se ve completo) en pantallas grandes (Desktop). En móvil se colapsa.
+          - navbar-light bg-light: Colores claros para fondo y texto.
+          - fixed-top: Deja la barra pegada arriba aunque hagas scroll.
+          - shadow-sm: Agrega una sombra suave debajo.
+        -->
+      <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow-sm">
+        <div class="container">
+          <!-- Centra el contenido y le da márgenes laterales -->
+
+          <!-- LOGO -->
+          <a class="navbar-brand header__logo" href="#">
+            <!-- Icono de FontAwesome (fas fa-wallet) -->
+            <i class="fas fa-wallet text-primary"></i> SmartBudget
+          </a>
+
+          <!-- BOTÓN HAMBURGUESA (Móvil) -->
+          <!-- Este botón solo aparece en pantallas pequeñas para desplegar el menú -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- CONTENIDO DEL MENÚ -->
+          <!-- id="navbarNav" conecta con el botón de arriba -->
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <!-- ml-auto: Empuja los items a la derecha (Margin Left Auto) -->
+            <ul class="navbar-nav ml-auto header__nav-list">
+              <li class="nav-item"><a class="nav-link" href="#features">Funcionalidades</a></li>
+              <li class="nav-item"><a class="nav-link" href="#pricing">Planes</a></li>
+
+              <!-- Botones en el menú -->
+              <!-- btn-outline-primary: Botón con borde azul transparente -->
+              <li class="nav-item">
+                <a class="nav-link btn btn-outline-primary ml-lg-3" href="#">Iniciar Sesión</a>
+              </li>
+              <!-- btn-primary: Botón sólido azul -->
+              <li class="nav-item">
+                <a class="nav-link btn btn-primary text-white ml-lg-2 mt-2 mt-lg-0" href="#"
+                  >Registrarse</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- =========================================
+         HERO SECTION (Portada)
+         Etiqueta <section> para dividir contenido temático
+         ========================================= -->
+    <!-- 
+      - d-flex align-items-center: Usa Flexbox para centrar verticalmente el contenido.
+      - hero: Clase BEM personalizada para estilos específicos (tamaño, fondo).
+    -->
+    <section class="hero d-flex align-items-center">
+      <div class="container">
+        <div class="row align-items-center">
+          <!-- Fila de Bootstrap -->
+
+          <!-- COLUMNA TEXTO (Izquierda) -->
+          <!-- col-lg-6: Ocupa mitad de pantalla (6 de 12 columnas) en desktop -->
+          <div class="col-lg-6 hero__content">
+            <!-- display-4: Clase de Bootstrap para títulos muy grandes y delgados -->
+            <h1 class="hero__title display-4">
+              Gestiona tus finanzas personales de forma inteligente.
+            </h1>
+            <!-- lead: Hace el párrafo un poco más grande y legible -->
+            <p class="hero__subtitle lead text-muted">
+              Toma el control de tu dinero con reportes detallados y presupuestos inteligentes.
+            </p>
+
+            <div class="hero__actions mt-4">
+              <!-- Margin Top 4 (espaciado) -->
+              <a href="#" class="btn btn-primary btn-lg shadow">Empieza GRATIS</a>
+              <a
+                href="https://www.youtube.com/watch?v=oHg5SJYRHA0"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-link btn-lg"
+                >Ver Demo
+              </a>
+            </div>
+          </div>
+
+          <!-- COLUMNA IMAGEN (Derecha) -->
+          <!-- mt-5: Margen superior en móvil para separar del texto -->
+          <!-- mt-lg-0: Sin margen superior en desktop -->
+          <div class="col-lg-6 hero__image-container mt-5 mt-lg-0">
+            <!-- img-fluid: Hace que la imagen sea responsive (nunca se salga de su contenedor) -->
+            <img
+              src="assets/APP SMARTBUG SENCE.png"
+              alt="app Sence SmartBudget"
+              class="img-fluid hero__img"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+         FEATURES SECTION (Características)
+         ========================================= -->
+    <section id="features" class="features section-padding bg-light">
+      <div class="container">
+        <!-- Título de la sección -->
+        <div class="row text-center mb-5">
+          <!-- Centrado y con margen inferior -->
+          <div class="col-12">
+            <h2 class="section-title">¿Por qué elegir SmartBudget de aula digital?</h2>
+            <p class="text-muted">
+              Herramientas poderosas para tu economía con soporte personalizado Front End Sence
+            </p>
+          </div>
+        </div>
+
+        <!--  Tarjetas -->
+        <div class="row">
+          <!-- TARJETA 1 -->
+          <!-- col-md-4: En tablets y escritorio ocupa 1/3 (4 de 12 columnas) -->
+          <div class="col-md-4 mb-4">
+            <!-- card: Componente tarjeta de Bootstrap -->
+            <!-- h-100: Forza que todas las tarjetas tengan la misma altura -->
+            <div class="card h-100 feature-card shadow-sm border-0">
+              <div class="card-body text-center">
+                <!-- Icono personalizado -->
+                <div class="feature-card__icon mb-3">
+                  <i class="fas fa-chart-pie fa-3x text-primary"></i>
+                </div>
+                <h5 class="card-title">Reportes Inteligentes</h5>
+                <p class="card-text text-muted">
+                  Gráficos interactivos para entender a dónde va tu dinero.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- TARJETA 2 -->
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 feature-card shadow-sm border-0">
+              <div class="card-body text-center">
+                <div class="feature-card__icon mb-3">
+                  <i class="fas fa-shield-alt fa-3x text-primary"></i>
+                </div>
+                <h5 class="card-title">Seguridad Total</h5>
+                <p class="card-text text-muted">
+                  Tus datos están encriptados y seguros con nosotros.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- TARJETA 3 -->
+          <div class="col-md-4 mb-4">
+            <div class="card h-100 feature-card shadow-sm border-0">
+              <div class="card-body text-center">
+                <div class="feature-card__icon mb-3">
+                  <i class="fas fa-mobile-alt fa-3x text-primary"></i>
+                </div>
+                <h5 class="card-title">Multiplataforma</h5>
+                <p class="card-text text-muted">Accede desde tu computadora, tablet o celular.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================================
+         FOOTER (Pie de página)
+         Etiqueta semántica <footer>
+         ========================================= -->
+    <footer class="footer bg-dark text-white py-4">
+      <!-- Fondo oscuro, texto blanco, padding vertical 4 -->
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-12">
+            <p class="mb-0">
+              &copy; 2026 SmartBudget Aula Digital Sence. Todos los derechos reservados Guillermo
+              S.M.
+            </p>
+            <div class="footer__socials mt-3">
+              <!-- Iconos sociales -->
+              <a href="#" class="text-white mx-2"><i class="fab fa-facebook-f"></i></a>
+              <a href="#" class="text-white mx-2"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- =========================================
+         SCRIPTS JAVASCRIPT
+         Necesarios para que funcionen los componentes dinámicos de Bootstrap
+         (como el menú desplegable en móvil o modales)
+         ========================================= -->
+    <!-- jQuery (Requerido por Bootstrap 4) -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"></script>
+    <!-- Bootstrap JS (Lógica de los componentes) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

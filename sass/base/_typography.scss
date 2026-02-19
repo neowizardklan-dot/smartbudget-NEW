@@ -1,0 +1,11 @@
+body {
+  font-family: $font-main;
+  color: $dark-color;
+  line-height: 1.6;
+}
+
+.section-title {
+  font-weight: 700;
+  margin-bottom: $spacing-unit;
+  color: $primary-color;
+}
